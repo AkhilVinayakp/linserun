@@ -3,10 +3,19 @@
     <div class="card-header">
       <h5>LINSERUN</h5>
     </div>
-    <div class="card-body">
-          <div class="mb-2 input-group">
-            
+    <div class="input-group mb-3 card-body">
+        <div class="input-group-prepend">
+            <select type="button" class="btn btn-primary dropdown-toggle">
+            <option class="dropdown-item" selected>Command</option>
+            <option class="dropdown-item">Search</option>
+            </select> 
           </div>
-    </div>
+        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+        <div class="input-group-append">
+          <span class="input-group-text"></span>
+          <button class="btn btn-success">{{btn.text}}</button>
+        </div>
+     
   </div>
+</div>
 </div>
