@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  btn={
+     text:""
+    }
+  constructor() { 
+    this.btn.text="click here"
+  }
 
   ngOnInit(): void { }
 
