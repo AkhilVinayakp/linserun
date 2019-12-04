@@ -13,12 +13,34 @@
               <option class="dropdown-item-text" value="search">Search</option>
               </select>
           </div>
-            <input type="text" class="form-control" name="text-box" [(ngModel)]="linserun.value" (keypress)="performAct()">
+            <input type="text" class="form-control" name="text-box" [(ngModel)]="value" (keypress)="performAct()">
             <div class="input-group-append">
                 <span class="input-group-text"></span>
-                <button class="btn btn-success">{{btn.text}}</button>
+                <button class="btn btn-success" (click)="lin_run_cmd()">{{btn.text}}</button>
             </div>
           </div>
       </form>
       {{action}}
+</div>
+
+<div class="container-fluid">
+          <div class="row" *ngIf="action=='Command'">
+            <!--run command window-->
+              <div class="col-6">
+                 <!--history of the  command and output window-->
+                 <div *ngIf="run_out_show==true">
+                   {{run_out}}
+                 </div>
+              </div>
+              <div class="col-6">
+                  <!--documentation of the command showing window-->
+              </div>
+          </div>
+          <div class="row" *ngIf="action=='search'">
+            <!--search result showing window-->
+
+
+
+          </div>
+ 
 </div>

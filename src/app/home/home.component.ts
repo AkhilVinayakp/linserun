@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { dataFrm } from '../../models/dataFreame'
+var shell=require("shelljs")
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,10 +10,9 @@ export class HomeComponent implements OnInit {
   btn={
      text:"click here"
     }
-    linserun={
-      value:""
-    }
-action:string="Command";
+   lin:dataFrm
+     
+     action:string="Command";
   constructor() { 
     
     console.log("hai  ")
@@ -26,6 +26,7 @@ action:string="Command";
     if(this.action=="Command")
       {
         this.executeShell_script()
+        console.log(this.action)
       }
     else if(this.action=="search")
     {
@@ -36,7 +37,12 @@ action:string="Command";
 
   executeShell_script()
   {
-    console.log("trigger ok run commanf");
+    console.log("trigger ok run command history and doc search");
+
+  }
+  test()
+  {
+    console.log(this.action);
   }
 
 
@@ -44,4 +50,9 @@ action:string="Command";
   {
     console.log("trigger ok perform search");
   }
+  lin_run_cmd()
+  {
+    
+  }
+
 }
