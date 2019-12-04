@@ -7,17 +7,18 @@
         <div class="input-group mb-3 card-body">
           <div class="input-group-prepend">
               <select type="button" class="btn btn-primary dropdown-toggle" name="action-value" [(ngModel)]="action">
-               <option class="dropdown-item" value="Command"  selected>Command</option>
-              <option class="dropdown-item" value="search">Search</option>
+               <option class="dropdown-item-text" value="Command" selected>Command
+
+               </option>
+              <option class="dropdown-item-text" value="search">Search</option>
               </select>
           </div>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="text-box" [(ngModel)]="linserun.value" (keypress)="performAct()">
             <div class="input-group-append">
                 <span class="input-group-text"></span>
                 <button class="btn btn-success">{{btn.text}}</button>
             </div>
           </div>
       </form>
-      {{val}}
       {{action}}
 </div>
