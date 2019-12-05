@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { dataFrm } from '../../models/dataFreame'
 var shell=require("shelljs")
+import { DataflowService } from '../service/dataflow.service'
+import { from } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,10 +12,12 @@ export class HomeComponent implements OnInit {
   btn={
      text:"click here"
     }
-   lin:dataFrm
+   lin:dataFrm;
+   value:string;
      
      action:string="Command";
-  constructor() { 
+  constructor(private _out=DataflowService) {
+
     
     console.log("hai  ")
   }
@@ -52,7 +56,8 @@ export class HomeComponent implements OnInit {
   }
   lin_run_cmd()
   {
-    
+    console.log(this.value)
+    this.lin=this._out.exec_cmd(this.value)
   }
 
 }
